@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gyro test</title>
+    </head>
+    <body>
+        <h1>Gyro Data</h1>
+        <p>Alpha (Rotation around z-axis): <span id="a">0</span>°</p>
+        <p>Beta (Rotation around x-axis): <span id="b">0</span>°</p>
+        <p>Gamma (Rotation around y-axis): <span id="g">0</span>°</p>
+
+        <script>
+            let gyroscope = new Gyroscope({ frequency: 60 });
+            const a = document.getElementbyId('a');
+            const b = document.getElementbyId('b');
+            const g = document.getElementbyId('g');
+
+
+            gyroscope.addEventListener("reading", (e) => {
+                a.innerText = gyroscope.x;
+                b.innerText = gyroscope.y;
+                g.innerText = gyroscope.z;
+            
+              console.log(`Angular velocity along the X-axis ${gyroscope.x}`);
+              console.log(`Angular velocity along the Y-axis ${gyroscope.y}`);
+              console.log(`Angular velocity along the Z-axis ${gyroscope.z}`);
+            });
+            gyroscope.start();
+
+
+        </script>
+    </body>
+</html>
