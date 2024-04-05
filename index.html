@@ -15,18 +15,19 @@
             const b = document.getElementbyId('b');
             const g = document.getElementbyId('g');
 
+            if (window.DeviceOrientationEvent) {
+            window.addEventListener('deviceorientation', function(event) {
+                    const alpha = event.alpha;
+                    const beta = event.beta;
+                    const gamma = event.gamma;
 
-            gyroscope.addEventListener("reading", (e) => {
-                a.innerText = gyroscope.x;
-                b.innerText = gyroscope.y;
-                g.innerText = gyroscope.z;
-            
-              console.log(`Angular velocity along the X-axis ${gyroscope.x}`);
-              console.log(`Angular velocity along the Y-axis ${gyroscope.y}`);
-              console.log(`Angular velocity along the Z-axis ${gyroscope.z}`);
-            });
-            gyroscope.start();
-
+                    document.getElementById('a').textContent = alpha.toFixed(2);
+                    document.getElementById('b').textContent = beta.toFixed(2);
+                    document.getElementById('g').textContent = gamma.toFixed(2);
+                }, true);
+            } else {
+                document.body.innerHTML = '<p>Your device does not support Gyroscope & Device Orientation events.</p>';
+            }
 
         </script>
     </body>
