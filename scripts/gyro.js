@@ -7,8 +7,9 @@ function handleOrientation(event) {
     const alpha = event.alpha
     const beta = event.beta;
     document.getElementById('logging').innerText = "alpha: " + alpha
-    if (alpha != -90 && alpha && alpha < 180 && alpha > 0) movePlatform((alpha-90)/90);
+    if (alpha != -90 && alpha && alpha < 180 && alpha > 0) movePlatform((alpha)/90);
     console.log(alpha);
+    setTimeout(()=> console.log("timeout"), 1000);
 }
 
 // Check if DeviceOrientationEvent is supported
