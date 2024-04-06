@@ -6,7 +6,7 @@ function startPushing() {
         console.log("pushing")
         console.log(gameOngoing)
         // Define the force to apply
-        var forceMagnitude = 5; // Adjust this value as needed
+        var forceMagnitude = 10; // Adjust this value as needed
         var randomNumber = Math.random();
         // Convert the random number to a boolean value
         var randomBoolean = randomNumber < 0.5;

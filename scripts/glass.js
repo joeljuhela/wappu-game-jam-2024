@@ -1,5 +1,10 @@
 // Create a glass
-var glass = Bodies.rectangle(window.innerWidth / 2, window.innerHeight / 2, 80, 160, {
+
+let glass_width = width/8
+if (width > 800) {
+    platform_width = 150 
+}
+var glass = Bodies.rectangle(width / 2, height / 2, glass_width, glass_width*2, {
     frictionAir: 0.05, // Air friction
     density: 0.061, // Density to control tipping
     render: {

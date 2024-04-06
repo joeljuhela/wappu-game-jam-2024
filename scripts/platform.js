@@ -4,12 +4,16 @@ var platform_options = {
     density: 100,
     mass: 1000,
     render: {
-        fillStyle: 'white', // Set the fill color of the rectangle
+        fillStyle: 'brown', // Set the fill color of the rectangle
         // You can also customize other rendering properties here, such as strokeStyle, lineWidth, etc.
     }
 };
 // Create a moving platform
-var platform = Bodies.rectangle(window.innerWidth / 2, window.innerHeight - 150, 150, 100, platform_options);
+let platform_width = width/10
+if (width > 600) {
+    platform_width = 100
+}
+var platform = Bodies.rectangle(width / 2, height - 150, platform_width, platform_width, platform_options);
 
 var ground_options = {
     isStatic: true, 
@@ -19,7 +23,7 @@ var ground_options = {
         // You can also customize other rendering properties here, such as strokeStyle, lineWidth, etc.
     }
 };
-var ground = Bodies.rectangle(window.innerWidth / 2, window.innerHeight, window.innerWidth, 200, ground_options);
+var ground = Bodies.rectangle(width / 2, height, width, 200, ground_options);
 
 // Define movement controls for the platform
 var platformSpeed = 10;
