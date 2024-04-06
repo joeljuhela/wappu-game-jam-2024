@@ -5,7 +5,8 @@ let glass_width = width / 8;
 if (width > 800) {
     glass_width = 150;
 }
-var push_factor = glass_width * 0.25
+const push_factor = 1;
+// var push_factor = glass_width * 0.25
 function startPushing() {
     if (gameOngoing) {
         var topEndX = glass.position.x; // X-coordinate of the center of the glass
