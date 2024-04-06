@@ -4,11 +4,13 @@ function isMobileDevice() {
 }
 
 function handleOrientation(event) {
-    const gamma = event.gamma
-    const beta = event.beta;
-    // document.getElementById('logging').innerText = "gamma: " + gamma
-    movePlatform((gamma)/90); // CHANGE THE VALUE BEHIND GAMMA TO MOVE IT A BIT LESS
-    console.log(gamma);
+    if (gameOngoing) {
+        const gamma = event.gamma
+        const beta = event.beta;
+        // document.getElementById('logging').innerText = "gamma: " + gamma
+        movePlatform((gamma)/90); // CHANGE THE VALUE BEHIND GAMMA TO MOVE IT A BIT LESS
+        console.log(gamma);
+    }
 }
 
 // Check if DeviceOrientationEvent is supported
