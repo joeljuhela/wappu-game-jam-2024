@@ -5,7 +5,7 @@ function isMobileDevice() {
 
 function handleOrientation(event) {
     const beta = event.beta;
-    movePlatform(beta-90);
+    movePlatform((beta-90)/10);
     console.log(beta.toFixed(2));
 }
 

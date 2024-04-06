@@ -2,13 +2,14 @@ var platform_options = {
     isStatic: false, 
     friction: 10,
     density: 100,
+    mass: 1000,
     render: {
         fillStyle: 'white', // Set the fill color of the rectangle
         // You can also customize other rendering properties here, such as strokeStyle, lineWidth, etc.
     }
 };
 // Create a moving platform
-var platform = Bodies.rectangle(window.innerWidth / 2, window.innerHeight - 150, 150, 20, platform_options);
+var platform = Bodies.rectangle(window.innerWidth / 2, window.innerHeight - 150, 150, 100, platform_options);
 
 var ground_options = {
     isStatic: true, 
