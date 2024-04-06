@@ -9,7 +9,11 @@ var gameCheckIfGlassFellOver = setInterval(checkIfGlassFellOver, 100); // Execut
 
 function checkIfGlassFellOver() {
     if (gameOngoing) {
-        var yThreshold = window.innerHeight -200; // Define the y-coordinate threshold
+        let glass_width = width/8
+        if (width > 800) {
+            glass_width = 150
+        }
+        var yThreshold = platform.position.y - glass_width*0.5; // Define the y-coordinate threshold
 
         console.log("glass y: " + glass.position.y)
         console.log("platform y: " +platform.position.y)
