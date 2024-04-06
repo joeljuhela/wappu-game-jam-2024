@@ -7,7 +7,7 @@ function handleOrientation(event) {
     const gamma = event.gamma
     const beta = event.beta;
     document.getElementById('logging').innerText = "gamma: " + gamma
-    movePlatform((gamma)/90);
+    movePlatform((gamma)/0);
     console.log(gamma);
     setTimeout(()=> console.log("timeout"), 1000);
 }
@@ -29,9 +29,9 @@ if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEve
         this.style.display = 'none';
     });
 } else {
-    // if (isMobileDevice()) {
+    if (isMobileDevice()) {
         // Non-iOS 13+ devices
         window.addEventListener('deviceorientation', handleOrientation, true);
         document.getElementById('requestPermission').style.display = 'none';
-    // }
+    }
 }

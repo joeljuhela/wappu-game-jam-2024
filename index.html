@@ -15,6 +15,7 @@
     <!-- Request is necessary for iOS 13+ -->
     <div id="game-container">
         <div id="game">
+            <button id="endGame">end game</button>
             <!-- Start button goes here -->
             <div id="start-button-container">
                 <button id="requestPermission" style="display: none">Request Permission</button>
@@ -23,13 +24,14 @@
 
         </div>
     </div>
+
     
     <div id="controls">
         <p style="color: white;" id="logging">NAICU</p>
         <button id="left-arrow" class="control-button">&#10094;</button>
         <button id="right-arrow" class="control-button">&#10095;</button>
     </div>
-
+    <script src="scripts/game.js"></script>
     <script src="scripts/start_button.js"></script>
     <script src="scripts/init_matter.js"></script>
     <!-- Add your beautiful matter.js stuff here -->
@@ -38,5 +40,6 @@
 
     <script src="scripts/control.js"></script>
     <script src="scripts/gyro.js"></script>
+    <script src="scripts/push_object.js"></script>
 </body>
 </html>

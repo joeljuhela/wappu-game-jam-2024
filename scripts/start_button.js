@@ -12,6 +12,9 @@ document.getElementById('start-button').addEventListener('click', function() {
                 setTimeout(function() {
                     startButtonContainer.style.display = 'none'; // Hide the start button container
                 }, 700);
+
+                gameOngoing = true;
+                console.log(gameOngoing)
             }, 700);
         }, 700);
     }, 500);
