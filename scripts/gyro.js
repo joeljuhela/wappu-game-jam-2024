@@ -5,6 +5,7 @@ function isMobileDevice() {
 
 function handleOrientation(event) {
     const beta = event.beta;
+    document.getElementById('logging').textContent = beta
     if (beta) movePlatform((beta-90)/100);
     console.log(beta);
 }
