@@ -3,6 +3,7 @@ const Engine = Matter.Engine;
 const Render = Matter.Render;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
+const Body = Matter.Body;
 const Constraint = Matter.Constraint;
 const Composite = Matter.Composite;
 

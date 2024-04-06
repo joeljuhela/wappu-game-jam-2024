@@ -2,18 +2,35 @@ var platform_options = {
     isStatic: false, 
     friction: 10,
     density: 100,
-    mass: 1000,
+    mass: 10000,
     render: {
         fillStyle: 'brown', // Set the fill color of the rectangle
-        // You can also customize other rendering properties here, such as strokeStyle, lineWidth, etc.
     }
 };
+
+function createTShape(x, y) {
+    // Create the vertical part of the T
+    var vertical = Bodies.rectangle(x, y, 20, 100, { isStatic: false });
+
+    // Create the horizontal part of the T
+    var horizontal = Bodies.rectangle(x, y + 50, 100, 20, platform_options);
+
+    // Group the two parts together into a single compound body
+    var tShape = Body.create({
+        parts: [vertical, horizontal],
+    });
+
+    return tShape;
+}
+
+
 // Create a moving platform
 let platform_width = width/10
 if (width > 600) {
     platform_width = 100
 }
-var platform = Bodies.rectangle(width / 2, height - 150, platform_width, platform_width, platform_options);
+// var platform = Bodies.rectangle(width / 2, height - 150, platform_width, platform_width, platform_options);
+var platform = createTShape(width / 2, height - 150);
 
 var ground_options = {
     isStatic: true, 
