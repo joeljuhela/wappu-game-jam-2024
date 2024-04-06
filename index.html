@@ -11,8 +11,7 @@
 
         <script>
 
-            if (window.DeviceOrientationEvent) {
-            window.addEventListener('deviceorientation', function(event) {
+            function handleOrientation(event) {
                     const alpha = event.alpha;
                     const beta = event.beta;
                     const gamma = event.gamma;
@@ -20,9 +19,28 @@
                     document.getElementById('a').textContent = alpha.toFixed(2);
                     document.getElementById('b').textContent = beta.toFixed(2);
                     document.getElementById('g').textContent = gamma.toFixed(2);
-                }, true);
+            }
+
+            // Check if DeviceOrientationEvent is supported
+            if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
+                // iOS 13+ devices
+                document.getElementById('requestPermission').style.display = 'block';
+                document.getElementById('requestPermission').addEventListener('click', function() {
+                    DeviceOrientationEvent.requestPermission()
+                        .then(permissionState => {
+                            if (permissionState === 'granted') {
+                                window.addEventListener('deviceorientation', handleOrientation, true);
+                            } else {
+                                alert('Permission not granted');
+                            }
+                        })
+                        .catch(console.error);
+                    this.style.display = 'none';
+                });
             } else {
-                document.body.innerHTML = '<p>Your device does not support Gyroscope & Device Orientation events.</p>';
+                // Non-iOS 13+ devices
+                window.addEventListener('deviceorientation', handleOrientation, true);
+                document.getElementById('requestPermission').style.display = 'none';
             }
 
         </script>
