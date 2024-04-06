@@ -26,7 +26,6 @@ const checkGyroAccess = () => {
               }
           })
           .catch(console.error);
-      this.style.display = 'none';
   } else {
       if (isMobileDevice()) {
           // Non-iOS 13+ devices
