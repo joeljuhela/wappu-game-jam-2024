@@ -1,6 +1,6 @@
-document.getElementById('start-button').addEventListener('click', function() {
-    var startButtonContainer = document.getElementById('start-button-container');
-    var startButton = document.getElementById('start-button');
+const startGame = () => {
+    const startButtonContainer = document.getElementById('start-button-container');
+    const startButton = document.getElementById('start-button');
     
     startButton.innerText = '3';
     setTimeout(function() {
@@ -18,4 +18,13 @@ document.getElementById('start-button').addEventListener('click', function() {
             }, 700);
         }, 700);
     }, 500);
+}
+
+
+document.getElementById('start-button').addEventListener('click', startGame);
+
+document.addEventListener("keypress", (event) => {
+  if (event.key === "Enter") {
+    startGame();
+  }
 });
