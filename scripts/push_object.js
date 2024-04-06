@@ -1,6 +1,11 @@
-var pushObjectInterval = setInterval(startPushing, 500); // Execute every 1 second
+var pushObjectInterval = setInterval(startPushing, 500); 
 
-var push_factor = 1
+
+let glass_width = width / 8;
+if (width > 800) {
+    glass_width = 150;
+}
+var push_factor = glass_width * 0.25
 function startPushing() {
     if (gameOngoing) {
         var topEndX = glass.position.x; // X-coordinate of the center of the glass
@@ -16,7 +21,7 @@ function startPushing() {
         var randomBoolean = randomNumber < 0.5;
         console.log(randomBoolean)
         forceMagnitude = randomBoolean ? forceMagnitude : (-1* forceMagnitude)
-        var force = { x: forceMagnitude, y: 0}; // Apply force in the upward direction (negative y-axis)
+        var force = { x: forceMagnitude, y: Math.abs(forceMagnitude)}; // Apply force in the upward direction (negative y-axis)
 
         // Apply the force to the top end of the glass
         Matter.Body.applyForce(glass, { x: topEndX, y: topEndY }, force);
