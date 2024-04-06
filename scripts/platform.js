@@ -1,6 +1,7 @@
 var platform_options = {
     isStatic: false, 
-    friction: 0.5,
+    friction: 2,
+    density: 100,
     render: {
         fillStyle: 'white', // Set the fill color of the rectangle
         // You can also customize other rendering properties here, such as strokeStyle, lineWidth, etc.
