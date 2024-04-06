@@ -4,11 +4,11 @@ function isMobileDevice() {
 }
 
 function handleOrientation(event) {
-    const alpha = event.alpha
+    const gamma = event.gamma
     const beta = event.beta;
-    document.getElementById('logging').innerText = "alpha: " + alpha
-    movePlatform((alpha)/90);
-    console.log(alpha);
+    document.getElementById('logging').innerText = "gamma: " + gamma
+    movePlatform((gamma)/90);
+    console.log(gamma);
     setTimeout(()=> console.log("timeout"), 1000);
 }
 
