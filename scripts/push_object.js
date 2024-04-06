@@ -1,4 +1,4 @@
-var intervalId = setInterval(startPushing, 500); // Execute every 1 second
+var pushObjectInterval = setInterval(startPushing, 500); // Execute every 1 second
 function startPushing() {
     if (gameOngoing) {
         var topEndX = glass.position.x; // X-coordinate of the center of the glass
