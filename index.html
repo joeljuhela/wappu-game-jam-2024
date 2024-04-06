@@ -1,49 +1,36 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Gyro test</title>
-    </head>
-    <body>
-        <h1>Gyro Data</h1>
-        <p>Alpha (Rotation around z-axis): <span id="a">0</span>°</p>
-        <p>Beta (Rotation around x-axis): <span id="b">0</span>°</p>
-        <p>Gamma (Rotation around y-axis): <span id="g">0</span>°</p>
-        <button id="requestPermission">Request Permission</button>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wappu Game Jam</title>
+    <link rel="stylesheet" href="styles/controls.css">
+    <link rel="stylesheet" href="styles/game.css">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/start_button.css">
+</head>
 
-        <script>
+<body>
+    <!-- Request is necessary for iOS 13+ -->
+    <button id="requestPermission" style="display: none">Request Permission</button>
+    <div id="game-container">
+        <div id="game">
+            <!-- Start button goes here -->
+            <div id="start-button-container">
+                <button id="start-button">Start</button>
+            </div>
+            <!-- Your game content goes here -->
+            <h1>This is the game area</h1>
+        </div>
+    </div>
+    
+    <div id="controls">
+        <button id="left-arrow" class="control-button">&#10094;</button>
+        <button id="right-arrow" class="control-button">&#10095;</button>
+    </div>
 
-            function handleOrientation(event) {
-                    const alpha = event.alpha;
-                    const beta = event.beta;
-                    const gamma = event.gamma;
-
-                    document.getElementById('a').textContent = alpha.toFixed(2);
-                    document.getElementById('b').textContent = beta.toFixed(2);
-                    document.getElementById('g').textContent = gamma.toFixed(2);
-            }
-
-            // Check if DeviceOrientationEvent is supported
-            if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
-                // iOS 13+ devices
-                document.getElementById('requestPermission').style.display = 'block';
-                document.getElementById('requestPermission').addEventListener('click', function() {
-                    DeviceOrientationEvent.requestPermission()
-                        .then(permissionState => {
-                            if (permissionState === 'granted') {
-                                window.addEventListener('deviceorientation', handleOrientation, true);
-                            } else {
-                                alert('Permission not granted');
-                            }
-                        })
-                        .catch(console.error);
-                    this.style.display = 'none';
-                });
-            } else {
-                // Non-iOS 13+ devices
-                window.addEventListener('deviceorientation', handleOrientation, true);
-                document.getElementById('requestPermission').style.display = 'none';
-            }
-
-        </script>
-    </body>
+    <script type="module" src="scripts/gyro.js"></script>
+    <script type="module" src="scripts/control.js"></script>
+    <script type="module" src="scripts/start_button.js"></script>
+</body>
 </html>
