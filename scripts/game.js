@@ -36,6 +36,6 @@ var scoreElement = document.getElementById('score');
 
 // Update score every second
 var scoreInterval = setInterval(function() {
-    scoreValue++;
+    if (gameOngoing) scoreValue++;
     scoreElement.textContent = scoreValue;
 }, 1000);
