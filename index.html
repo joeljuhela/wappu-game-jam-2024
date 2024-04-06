@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wappu Game Jam</title>
+    <link rel="stylesheet" href="styles/controls.css">
+    <link rel="stylesheet" href="styles/game.css">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/start_button.css">
+</head>
+
+<body>
+    <!-- Request is necessary for iOS 13+ -->
+    <button id="requestPermission" style="display: none">Request Permission</button>
+    <div id="game-container">
+        <div id="game">
+            <!-- Start button goes here -->
+            <div id="start-button-container">
+                <button id="start-button">Start</button>
+            </div>
+            <!-- Your game content goes here -->
+            <h1>This is the game area</h1>
+        </div>
+    </div>
+    
+    <div id="controls">
+        <button id="left-arrow" class="control-button">&#10094;</button>
+        <button id="right-arrow" class="control-button">&#10095;</button>
+    </div>
+
+    <script type="module" src="scripts/gyro.js"></script>
+    <script type="module" src="scripts/control.js"></script>
+    <script type="module" src="scripts/start_button.js"></script>
+</body>
+</html>
