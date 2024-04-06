@@ -1,6 +1,6 @@
 // Create a glass
 var textureImagePlatform = new Image();
-textureImagePlatform.src = '/assets/DALL·E 2024-04-06 14.01.35 - Create a pixel art image of a larger, intricately designed sima bottle, focusing exclusively on the bottle itself. The bottle should have a classic, s.webp'; // Replace 'path/to/texture.png' with the path to your image
+textureImagePlatform.src = 'assets/DALL·E 2024-04-06 14.01.35 - Create a pixel art image of a larger, intricately designed sima bottle, focusing exclusively on the bottle itself. The bottle should have a classic, s.webp'; // Replace 'path/to/texture.png' with the path to your image
 
 var platform = null;
 
