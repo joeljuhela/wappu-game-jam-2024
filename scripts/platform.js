@@ -1,25 +1,15 @@
-// Create a Matter.js engine
-var Engine = Matter.Engine,
-    Render = Matter.Render,
-    World = Matter.World,
-    Bodies = Matter.Bodies,
-    Body = Matter.Body;
 
-var engine = Engine.create();
 
-// Create a renderer
-var render = Render.create({
-    element: document.getElementById('game'), // Target the #game div
-    engine: engine,
-    options: {
-        width: 800,
-        height: 600,
-        wireframes: false
+var options = {
+    isStatic: true, 
+    friction: 0.5,
+    render: {
+        fillStyle: 'white', // Set the fill color of the rectangle
+        // You can also customize other rendering properties here, such as strokeStyle, lineWidth, etc.
     }
-});
-
+};
 // Create a moving platform
-var platform = Bodies.rectangle(400, 500, 200, 20, { isStatic: true, friction: 0.5 });
+var platform = Bodies.rectangle(window.innerWidth / 2, window.innerHeight - 150, 300, 20, options);
 
 // Add the platform to the world
 World.add(engine.world, [platform]);
@@ -46,9 +36,3 @@ document.addEventListener('keyup', function(event) {
         movePlatform(0); // Stop moving
     }
 });
-
-// Run the engine
-Engine.run(engine);
-
-// Run the renderer
-Render.run(render);
