@@ -1,23 +1,24 @@
 const startGame = () => {
-    const startButtonContainer = document.getElementById('start-button-container');
-    const startButton = document.getElementById('start-button');
-    
-    startButton.innerText = '3';
+  checkGyroAccess();
+  const startButtonContainer = document.getElementById('start-button-container');
+  const startButton = document.getElementById('start-button');
+  
+  startButton.innerText = '3';
+  setTimeout(function() {
+    startButton.innerText = '2';
     setTimeout(function() {
-        startButton.innerText = '2';
+      startButton.innerText = '1';
+      setTimeout(function() {
+        startButton.innerText = 'GO!';
         setTimeout(function() {
-            startButton.innerText = '1';
-            setTimeout(function() {
-                startButton.innerText = 'GO!';
-                setTimeout(function() {
-                    startButtonContainer.style.display = 'none'; // Hide the start button container
-                }, 700);
-
-                gameOngoing = true;
-                console.log(gameOngoing)
-            }, 700);
+          startButtonContainer.style.display = 'none'; // Hide the start button container
         }, 700);
-    }, 500);
+
+        gameOngoing = true;
+        console.log(gameOngoing)
+      }, 700);
+    }, 700);
+  }, 500);
 }
 
 
