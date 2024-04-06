@@ -4,10 +4,11 @@ function isMobileDevice() {
 }
 
 function handleOrientation(event) {
+    const alpha = event.alpha
     const beta = event.beta;
-    document.getElementById('logging').innerText = beta
-    if (beta != -90 && beta && beta < 180 && beta > 0) movePlatform((beta-90)/90);
-    console.log(beta);
+    document.getElementById('logging').innerText = alpha
+    if (alpha != -90 && alpha && alpha < 180 && alpha > 0) movePlatform((alpha-90)/90);
+    console.log(alpha);
 }
 
 // Check if DeviceOrientationEvent is supported
