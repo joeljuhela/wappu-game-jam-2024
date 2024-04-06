@@ -5,8 +5,8 @@ function isMobileDevice() {
 
 function handleOrientation(event) {
     const beta = event.beta;
-    document.getElementById('logging').textContent = beta
-    if (beta) movePlatform((beta-90)/100);
+    document.getElementById('logging').innerText = beta
+    if (beta != -90 && beta && beta < 180 && beta > 0) movePlatform((beta-90)/90);
     console.log(beta);
 }
 
@@ -27,9 +27,9 @@ if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEve
         this.style.display = 'none';
     });
 } else {
-    if (isMobileDevice()) {
+    // if (isMobileDevice()) {
         // Non-iOS 13+ devices
         window.addEventListener('deviceorientation', handleOrientation, true);
         document.getElementById('requestPermission').style.display = 'none';
-    }
+    // }
 }
