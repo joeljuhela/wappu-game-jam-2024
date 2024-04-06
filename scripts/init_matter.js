@@ -3,6 +3,7 @@ const Render = Matter.Render;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Constraint = Matter.Constraint;
+const Composite = Matter.Composite;
 
 
 const engine = Engine.create();
@@ -23,9 +24,26 @@ const render = Render.create({
     }
 });
 
+const wallOptions = {
+  isStatic: true,
+  render: {
+    fillStyle: 'white',
+    strokeStyle: 'white',
+    lineWidth: 10
+  }
+}
+
+const width = render.options.width;
+const height = render.options.height;
+const thickness = 10;
+
+Composite.add(engine.world, [
+  Bodies.rectangle(width, height/2, thickness, height, wallOptions),
+  Bodies.rectangle(0, height/2, thickness, height, wallOptions),
+])
 
 // Run the engine
-Engine.run(engine);
+Matter.Runner.run(engine);
 
 // Run the renderer
 Render.run(render);
