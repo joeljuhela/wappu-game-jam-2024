@@ -9,7 +9,7 @@ var gameCheckIfGlassFellOver = setInterval(checkIfGlassFellOver, 100); // Execut
 
 function checkIfGlassFellOver() {
     if (gameOngoing) {
-        var yThreshold = 1000; // Define the y-coordinate threshold
+        var yThreshold = window.innerHeight -200; // Define the y-coordinate threshold
 
         console.log("glass y: " + glass.position.y)
         console.log("platform y: " +platform.position.y)
@@ -29,3 +29,13 @@ function displayGameOver() {
     window.location.reload();
 
 }
+
+// Initialize score
+var scoreValue = 0;
+var scoreElement = document.getElementById('score');
+
+// Update score every second
+var scoreInterval = setInterval(function() {
+    scoreValue++;
+    scoreElement.textContent = scoreValue;
+}, 1000);

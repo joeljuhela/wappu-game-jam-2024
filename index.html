@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/game.css">
     <link rel="stylesheet" href="styles/general.css">
     <link rel="stylesheet" href="styles/start_button.css">
+    <link rel="stylesheet" href="styles/score.css">
     <script src=" https://cdn.jsdelivr.net/npm/matter-js@0.19.0/build/matter.min.js "></script>
 </head>
 
@@ -15,7 +16,9 @@
     <!-- Request is necessary for iOS 13+ -->
     <div id="game-container">
         <div id="game">
-            <button id="endGame">end game</button>
+            <div id="score-container">
+                <p>Score:<scan id="score"></scan></p>
+            </div>
             <!-- Start button goes here -->
             <div id="start-button-container">
                 <button id="requestPermission" style="display: none">Request Permission</button>
