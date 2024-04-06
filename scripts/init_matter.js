@@ -21,6 +21,7 @@ const render = Render.create({
     options: {
         width: windowWidth,
         height: windowHeight,
+        background: 'transparent',
         wireframes: false // For a colored rendering
     }
 });
