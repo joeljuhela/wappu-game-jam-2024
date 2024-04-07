@@ -1,6 +1,6 @@
 // Create a glass
 var textureImageGlass = new Image();
-textureImageGlass.src = 'assets/DALL·E 2024-04-06 14.01.35 - Create a pixel art image of a larger, intricately designed sima bottle, focusing exclusively on the bottle itself. The bottle should have a classic, s.webp'; // Replace 'path/to/texture.png' with the path to your image
+textureImageGlass.src = 'assets/bottle.webp'; // Replace 'path/to/texture.png' with the path to your image
 
 var glass = null;
 // Wait for the texture image to load
@@ -12,10 +12,11 @@ textureImageGlass.onload = function() {
     
     // Calculate scaling factors
     var xScale = glass_width / textureImageGlass.width;
-    var yScale = (glass_width * 1.5) / textureImageGlass.height;
+    var glass_height = glass_width * 1.8;
+    var yScale = glass_height / textureImageGlass.height;
     
     // Create the glass rectangle body
-    glass = Bodies.rectangle(width / 2, height - 350, glass_width, glass_width * 1.5, {
+    glass = Bodies.rectangle(width / 2, height - 350, glass_width, glass_height, {
         frictionAir: 0.05, // Air friction
         density: 0.06, // Density to control tipping
         render: {

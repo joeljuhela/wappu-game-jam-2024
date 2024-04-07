@@ -11,7 +11,8 @@
 }
 
 #start-button {
-    background-color: #4CAF50;
+    font-family: "Pixelify Sans", sans-serif;
+    background-color: #9f338e;
     color: white;
     border: none;
     padding: 20px 40px;

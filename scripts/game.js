@@ -13,7 +13,7 @@ function checkIfGlassFellOver() {
         if (width > 800) {
             glass_width = 150
         }
-        var yThreshold = platform.position.y - glass_width*0.5; // Define the y-coordinate threshold
+        var yThreshold = platform.position.y - glass_width*0.6; // Define the y-coordinate threshold
 
         console.log("glass y: " + glass.position.y)
         console.log("platform y: " +platform.position.y)
